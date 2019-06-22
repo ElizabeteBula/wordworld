@@ -1,0 +1,91 @@
+
+html {background-color: #66ccff;
+background-image: url("	https://visme.co/blog/wp-content/uploads/2017/07/50-Beautiful-and-Minimalist-Presentation-Backgrounds-050.jpg") ;
+}
+header{ background-image: url("https://cdn4.vectorstock.com/i/1000x1000/01/03/abstract-dark-blue-background-with-triangles-vector-21640103.jpg") ;
+background-size: cover;
+ background-color:#66ccff;
+text-align: center;
+	font-size:25px;
+	color:#cce6ff;
+	font-family:Lucida Console;
+	height: 100%;
+	width: 100%;
+	text-shadow: 2px 2px 5px  #FFFFB8;
+
+
+}
+
+nav {
+margin-right: 150px;
+  margin-left: 150px;
+  background-color: #004d99;
+}
+tr {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    background-color: #0059b3;
+}
+
+th a {
+    display: block;
+    color: #e6f2ff;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+
+th a:hover {
+    background-color:  #b3d9ff;
+    color:#003e80;
+
+}
+
+
+
+aside {float: right;
+    max-width: 160px;
+    margin: 0;
+    padding: 1em;
+	background-color:rgb(0, 89, 179, 0.6);
+    margin-right: 0px;
+		margin-left: 0px;
+}
+section {margin-right: 170px;
+
+
+    padding: 1em;
+    overflow: hidden;
+	background-color:rgb(0, 20, 51, 0.5);
+	height: 900px;
+	 margin-left: 150px;
+	 margin-right: 150px;
+	 padding: 20px 40px;
+}
+footer{ background-color:#004d99;
+padding: 1em;
+    color:#cce6ff ;
+    clear: left;
+    text-align: center;
+	height: 100%;
+	margin-right: 150px;
+  margin-left: 150px;
+}
+.button {
+  background-color:#0059b3;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.lauks{
+    margin: 4px 2px;
+    font-size: 16px;
+}

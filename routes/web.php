@@ -16,11 +16,15 @@ Route::get('/', function () {
 });
 
 Route::get('/manavardnica','vardnicasController@index');
+Route::get('/manavardnica/{id}', 'vardnicasController@choseLanguage');
 Route::get('/pieraksti', 'pierakstiController@index');
 Route::get('/manskonts', 'kontsController@index');
-Route::get('/ieiet', function() {
-	return view('ieiet');
-});
-Route::get('/registreties', function() {
-	return view('registreties');
-});
+Route::get('/test', function() {return view('valoda');});
+Route::get('/ieiet', function() {return view('auth/login');});
+Route::get('/registreties', function() {return view('auth/register');});
+Route::post('/pieraksti','pierakstiController@storepieraksti');
+//Route::post('/test','pierakstiController@insertData');
+// Route::resource('/valoda','valodaController');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

@@ -33,6 +33,7 @@
 if (empty($_POST["pieraksti"])) {
     $pieraksti = "";
   } else {
+
     $pieraksti = test_input($_POST["pieraksti"]);
   }
   function test_input($data) {
@@ -44,17 +45,20 @@ if (empty($_POST["pieraksti"])) {
 ?>
 	<p font-size: 20px><B>PIEVIENOJAM PIERAKSTUS!!!</b></P>
 	<form>
+
 	<textarea name="pieraksti" rows="20" cols="50"><?php echo $pieraksti;?></textarea>
  <BR>
 <!--	<button  class="button" onclick="ok()">PIEVIENOT </button>  -->
 	
-	<input type="submit" value="PIEVIENOT" class="button">
+	<input type="submit" value="PIEVIENOT" onclick="pievienot()"  class="button">
      
   </form>
   <?php
 echo "<h2>Your Input:</h2>";
 echo $pieraksti;
 ?>
+
+
 </section>
 
 

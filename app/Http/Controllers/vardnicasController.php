@@ -13,7 +13,9 @@ class vardnicasController extends Controller
     }  
 
 	public function choseLanguage(Request $request, $id) {
-		return view('valoda', array('valodasId' => $id));
+		$valoda = DB::table('valoda')->where('id', $id)->pluck('valoda');
+		$vardi = DB::table('vardi')->where('valoda', $valoda[0])->get();
+		return view('valoda', array('valodasId' => $id, 'vardi' => $vardi));
 	}
 	
 	/*

@@ -29,8 +29,9 @@ class pierakstiController extends Controller
 		// }
 	
 	
-		public function choseLanguage(Request $request, $id) {
-		return view('pieraksti', array('pierakstiId' => $id));
+		public function Pievienot(Request $request, $id) {
+		return $pieraksti;
+		//view('pieraksti', array('pierakstiId' => $id));
 	}
 	
 }

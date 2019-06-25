@@ -1,80 +1,29 @@
-<!DOCTYPE html>
-<html>
-<head>
-<link rel="stylesheet" type="text/css" href="stils.css">
-	<meta charset="utf-8">
-	<title> WordWorld </title>
-</head>
-<header>
-<br>
-  <strong> <h1>Word World</h1></strong>
-   <br>
-</header>
+<?php $__env->startSection('content'); ?>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+				<div class="card-body">
+					<h3><B>PIEVIENOJAM PIERAKSTUS!!!</b></h3>
+					<form method="POST" action="/pieraksti/add" class="form-horizontal">
+					<?php echo csrf_field(); ?>
+						<div class="form-group row">
+							<textarea name="pieraksti" id="pieraksti"></textarea>
+						</div>
+						<button type="submit" class="btn btn-primary">Pievienot</button>
+					</form>
+				</div>	
+			</div>	
+			<?php $__currentLoopData = $pieraksti; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $pieraksts): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+			<div class="card">
+				<div class="card-body">
+					<p><?php echo e($pieraksts); ?></p>
+				</div>
+			</div>
+			<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+		</div>
+	</div>
+</div>
+<?php $__env->stopSection(); ?>
 
-<nav>
-<table style="width:100%">
- <tr >
-    <th><a href="/" > SĀKUMS</a></th>
-    <th><a href="/manavardnica">MANAS VĀRDNĪCAS</a></th>
-    <th><a href="/pieraksti">PIERAKSTI</a></th>
-	  <th><a href="/ieiet">IEIET</a> </th>
-	  <th><a href="/registreties">REĢISTRĒTIES</a> </th>
-		<th><a href="/manskonts">MANS KONTS</a> </th>
-	</tr>
-	  </table>
-</nav>
-
-<section>
-
-<p font-size: 20px><B>PIEVIENOJAM PIERAKSTUS!!!</b></P>
-	<form>
-	<textarea name="pieraksti" rows="20" cols="50"><?php echo $pieraksti;?></textarea>
- <BR>
-<!--	<button  class="button" onclick="ok()">PIEVIENOT </button>  -->
-	
-	<input type="submit" value="PIEVIENOT" class="button">
-     
-  </form>
-
-
-<?php
-if (empty($_POST["pieraksti"])) {
-    $pieraksti = "";
-  } else {
-    $pieraksti = test_input($_POST["pieraksti"]);
-  }
-  function test_input($data) {
-  $data = trim($data);
-  $data = stripslashes($data);
-  $data = htmlspecialchars($data);
-  return $data;
-}
-?>
-	<p font-size: 20px><B>PIEVIENOJAM PIERAKSTUS!!!</b></P>
-	<form>
-	<textarea name="pieraksti" rows="20" cols="50"><?php echo $pieraksti;?></textarea>
- <BR>
-<!--	<button  class="button" onclick="ok()">PIEVIENOT </button>  -->
-	
-	<input type="submit" value="PIEVIENOT" class="button">
-     
-  </form>
-  <?php
-echo "<h2>Your Input:</h2>";
-echo $pieraksti;
-?>
-</section>
-
-
-
-
-
-
-<footer>
-Copyright © Elizabete Līga Bula
-2019
-</footer>
-<body>
-</body>
-</html>
-<?php /**PATH C:\wamp\www\wordworld\resources\views/pieraksti.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\wamp\www\wordworld\resources\views/pieraksti.blade.php ENDPATH**/ ?>

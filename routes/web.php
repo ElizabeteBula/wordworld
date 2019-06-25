@@ -22,8 +22,10 @@ Route::get('/manskonts', 'kontsController@index');
 Route::get('/test', function() {return view('valoda');});
 Route::get('/ieiet', function() {return view('auth/login');});
 Route::get('/registreties', function() {return view('auth/register');});
-Route::post('/pieraksti','pierakstiController@storepieraksti');
-//Route::post('/test','pierakstiController@insertData');
+Route::post('/pieraksti','pierakstiController@index');
+Route::post('/valoda','valodaController@insertData');
+Route::post('/pieraksti/add', 'pierakstiController@Pievienot');
+
 // Route::resource('/valoda','valodaController');
 Auth::routes();
 

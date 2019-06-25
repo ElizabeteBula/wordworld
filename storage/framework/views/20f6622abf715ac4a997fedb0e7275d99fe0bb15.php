@@ -6,27 +6,28 @@
                 <div class="card-header"><?php echo e(__('tulkot')); ?></div>
 
                 <div class="card-body">
+					<form method="POST" action="/valoda" class="form-horizontal">
                         <?php echo csrf_field(); ?>
 
                         <div class="form-group row">
-                            <label for="text" class="col-md-4 col-form-label text-md-right"><?php echo e(__('vards')); ?></label>
+                            <label for="vards" class="col-md-4 col-form-label text-md-right"><?php echo e(__('vards')); ?></label>
 
                             <div class="col-md-6">
                                 <input id="email" type="text" class="form-control <?php if ($errors->has('email')) :
 if (isset($message)) { $messageCache = $message; }
 $message = $errors->first('email'); ?> is-invalid <?php unset($message);
 if (isset($messageCache)) { $message = $messageCache; }
-endif; ?>" name="text">
-
+endif; ?>" name="vards">
+ 
 
                             </div>
                         </div>
-
+				
                         <div class="form-group row">
-                            <label for="text" class="col-md-4 col-form-label text-md-right"><?php echo e(__('tulkojums')); ?></label>
+                            <label for="tulkojums" class="col-md-4 col-form-label text-md-right"><?php echo e(__('tulkojums')); ?></label>
 
                             <div class="col-md-6">
-                                <input id="text" type="text" class="form-control <?php if ($errors->has('password')) :
+                                <input name="tulkojums" id="text" type="text" class="form-control <?php if ($errors->has('password')) :
 if (isset($message)) { $messageCache = $message; }
 $message = $errors->first('password'); ?> is-invalid <?php unset($message);
 if (isset($messageCache)) { $message = $messageCache; }
@@ -35,11 +36,16 @@ endif; ?>" >
 
                             </div>
                         </div>
+						<input type="hidden" name="valoda" id="valoda" value="<?php echo e($valodasId); ?>" class="form-control <?php if ($errors->has('valoda')) :
+if (isset($message)) { $messageCache = $message; }
+$message = $errors->first('valoda'); ?> is-invalid <?php unset($message);
+if (isset($messageCache)) { $message = $messageCache; }
+endif; ?>" >
+						<div>
 
 
 
-
-                                <button type="PIEVIENOT" class="btn btn-primary">
+                                <button type="submit" class="btn btn-primary">
                                     <?php echo e(__('PIEVIENOT')); ?>
 
                                 </button>
@@ -50,6 +56,16 @@ endif; ?>" >
                     </form>
                 </div>
             </div>
+			<div>
+				<?php $__currentLoopData = $vardi; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $vards): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+					<div class="card">
+						<div class="card-body">
+							<p>Vards: <?php echo e($vards->vards); ?></p>
+							<p>Tulkojums: <?php echo e($vards->tulkojums); ?></p>	
+						</div>
+					</div>
+				<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+			</div>
         </div>
     </div>
 </div>
